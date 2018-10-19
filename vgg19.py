@@ -74,6 +74,7 @@ class VGG19Net(tf.keras.Model):
         x = tf.layers.max_pooling2d(x, pool_size=[2, 2], strides=[2, 2])
 
         # FC Layers
+        x = tf.layers.flatten(x)
         x = self.layer_17(x)
         x = self.layer_18(x)
         x = self.layer_19(x)
